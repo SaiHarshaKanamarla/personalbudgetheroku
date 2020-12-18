@@ -55,7 +55,6 @@ import { DummyComponent } from './dummy/dummy.component';
     DummyComponent,  ],
   imports: [
     BrowserModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
     AppRoutingModule,
     HttpClientModule,
