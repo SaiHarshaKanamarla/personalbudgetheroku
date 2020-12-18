@@ -88,7 +88,7 @@ export class DataService {
       const body=JSON.stringify(data);
       console.log(body)
       // return this.http.post('http://68.183.139.30:3000/auth',body,{'headers':headers}).subscribe((res:any)=>{
-        return this.http.post('http://68.183.139.30:3000/auth',body,{'headers':headers}).subscribe((res:any)=>{
+        return this.http.post('http://68.183.139.30:3000/auth/',body,{'headers':headers}).subscribe((res:any)=>{
         console.log(res);       
         this.userRecord['username'] = data.username;
         this.userRecord['password'] = data.password;
