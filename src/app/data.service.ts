@@ -115,9 +115,11 @@ export class DataService {
             const exp = localStorage.getItem('exp');
             const expdate = new Date(0).setUTCSeconds(Number(exp));
             const TokenNotExpired = expdate.valueOf() > new Date().valueOf();
-            const lessThanTwentySecRemaining = expdate.valueOf() - new Date().valueOf() <= 20000;
+            // const lessThanTwentySecRemaining = expdate.valueOf() - new Date().valueOf() <= 20000;
+            const lessThanTwentySecRemaining = expdate.valueOf() - new Date().valueOf() <= 25000;
+            console.log(expdate.valueOf()+" "+new Date().valueOf());
             console.log(lessThanTwentySecRemaining+" "+TokenNotExpired+" "+this.logouthandler);
-
+            
             if (TokenNotExpired && lessThanTwentySecRemaining && this.logouthandler) {                                        
               let message = confirm(
                 'Your session is going to expire in 20 seconds! click OK to extend the session!'
@@ -141,7 +143,6 @@ export class DataService {
               this.logout();
               this.successfulLogout();
               console.log('clear interval');
-              return;
       }
           }, 20000);
         } else {
