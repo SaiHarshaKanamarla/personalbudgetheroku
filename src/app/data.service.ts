@@ -122,7 +122,7 @@ export class DataService {
             
             if (TokenNotExpired && lessThanTwentySecRemaining && this.logouthandler) {                                        
               let message = confirm(
-                'Your session is going to expire in 20 seconds! click OK to extend the session!'
+                'Your session is going to expire in a few seconds! click OK to extend the session!'
               );
               if(message && this.logouthandler){
                 console.log("okay clicked");
